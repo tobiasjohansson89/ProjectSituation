@@ -15,10 +15,14 @@ const tasksSchema = new Schema({
         type: String,
         required: false
     },
+    deadline:{
+        type: Date,
+        required: false
+    },
     author: {
         type: String,
         required: true,
-        default: 'trine'
+        
     }
 
 }, {timestamps: true })
