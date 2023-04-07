@@ -10,7 +10,6 @@ const routes = express.Router()
 api.use('/api/tasks/', routes)
 
 
-// task: title, description, category, deadline
 
 
 mongoose.connect(process.env.MONG_URI)
