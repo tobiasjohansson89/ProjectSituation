@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
@@ -9,14 +9,22 @@ const tasksSchema = new Schema({
     },
     description: {
         type: String,
-        required: true
+        required: false
     },
-    user_id: {
+    category:{
         type: String,
-        required: true
+        required: false
+    },
+    author: {
+        type: String,
+        required: true,
+        default: 'trine'
     }
 
 }, {timestamps: true })
 
 module.exports = mongoose.model('tasks', tasksSchema)
+
+
+// task: title, description, category, deadline
 
