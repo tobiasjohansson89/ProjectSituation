@@ -1,15 +1,15 @@
 import Header from "./header";
 import Card from "./card";
+import { TaskForm } from "./task-form";
 
 export default function Body() {
     return (
-    <>
-    <body>
+    <div>
         <Header />
         <main>
+            <TaskForm />
             <Card />
         </main>
-    </body>
-    </>
+    </div>
     );
     }
