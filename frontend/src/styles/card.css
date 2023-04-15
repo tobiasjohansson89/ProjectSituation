@@ -1,0 +1,10 @@
+.card {
+    max-width: 20vw;
+    margin: 1rem;
+    padding: 10px;
+    border: solid 1px #ffffff4d;
+    border-radius: 5px;
+}
+.card:hover {
+    box-shadow: 0px 1px 5px #ffffff52;
+}
