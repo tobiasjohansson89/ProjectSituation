@@ -1,7 +1,7 @@
 export default function Navbar() {
     return (
     <>
-        <h2>ProjectSituation</h2>
+        <h2 className="logo">ProjectSituation</h2>
         <nav className="navbar">
             <ul>
                 <li>Home</li>
