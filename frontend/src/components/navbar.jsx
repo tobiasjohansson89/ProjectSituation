@@ -1,17 +1,13 @@
 export default function Navbar() {
     return (
     <>
-    <h2>Navbar</h2>
-    <nav>
+    <h2>ProjectSituation</h2>
+    <nav className="navbar">
         <ul>
-            <li>
-                <div className="navbar">
-                    <p>Home</p>
-                    <p>About</p>
-                    <button>Login</button>
-                </div>          
-            </li>
+            <li>Home</li>
+            <li>About</li>
         </ul>
+        <button id="login-out">Login</button> 
     </nav>
     </>
     );

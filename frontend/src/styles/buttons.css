@@ -1,7 +1,9 @@
 button {
     border-radius: 8px;
     border: 1px solid #ffffff;
-    padding: 0.6em 1.2em;
+    height: fit-content;
+    padding: 10px 20px;
+    margin: 1rem;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
@@ -10,5 +12,5 @@ button {
     transition: border-color 0.25s;
   }
   button:hover {
-    border-color: #0f0f0f;
+    border-color: #2c2929;
   }
