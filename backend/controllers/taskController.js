@@ -37,7 +37,6 @@ const createTask = async (req, res) => {
     }
     // Add document to db
     try {
-        const user_id = req._id
         const task = await Tasks.create({title, description, category, deadline, author})    
         res.status(200).json(task)
     } catch (error){
