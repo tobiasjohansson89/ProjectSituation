@@ -15,20 +15,23 @@ export default function Card() {
         getData()
     }, []);
 
-    let title;
-    let description;
-    for(let i = 0; i < data.length; i++) {
-        title = data[i].title;
-        description = data[i].description
-    }
+    return (
+        <div>
+        {data.map((data) => { 
+            return (   
+                <div className="card"key={data._id.$oid}>
+                    <h2>{data.title}</h2>
+                    <p>{data.description}</p>
+                    <p>{data.category}</p>
+                    <p>{data.deadline}</p>
+                    <p>{data.author}</p>
+                </div> 
+            )
 
-    console.log(data)
-            return (
-            <>
-            <div className="card">
-                <h2>{title}</h2>
-                <p>{description}</p>
-            </div>
-            </>
-            );
-    }
+        })}
+
+
+        </div>
+
+
+    )}
