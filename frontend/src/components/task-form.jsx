@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 export function TaskForm() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -8,13 +9,28 @@ export function TaskForm() {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      console.log({
+      const taskObject = {
         title,
         description,
         category,
         deadline,
         author,
-      });
+      }
+
+      
+       
+      
+        const getData = async () => {
+          const postOptions = {
+            method: 'POST',
+            body: JSON.stringify(taskObject),
+            headers: {
+                'Content-Type': 'application/json'    
+            }
+          }
+          const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
+      }
+      getData()
     };
   
     return (
