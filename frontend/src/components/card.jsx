@@ -23,10 +23,7 @@ return (<div className='cards-container'>
                 <Link to={`DetailsPage?id=${data._id.$oid}`} key={data._id.$oid}>
                           <div className="card" >
                              <h2>{data.title}</h2>
-                             <p>{data.description}</p>
-                             <p>{data.category}</p>
                              <p>{data.deadline}</p>
-                             <p>{data.author}</p>
                           </div>
                 </Link>)
                         })
