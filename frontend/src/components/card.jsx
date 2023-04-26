@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export default function Card() {
     
@@ -16,15 +16,17 @@ export default function Card() {
         getData()
     }, []);
 
-return (<div>
+return (<div className='cards-container'>
     {data.map((data) => { 
-                return (<div className="card"key={data._id.$oid}>
-                            <h2>{data.title}</h2>
-                            <p>{data.description}</p>
-                            <p>{data.category}</p>
-                            <p>{data.deadline}</p>
-                            <p>{data.author}</p>
-                        </div>)
+                return (<Link to="DetailsPage">
+                          <div className="card"key={data._id.$oid}>
+                             <h2>{data.title}</h2>
+                             <p>{data.description}</p>
+                             <p>{data.category}</p>
+                             <p>{data.deadline}</p>
+                             <p>{data.author}</p>
+                          </div>
+                        </Link>)
                         })
     }
        </div>)

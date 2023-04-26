@@ -1,5 +1,9 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
 .card {
-    max-width: 20vw;
+    width: 200px;
     margin: 1rem;
     padding: 10px;
     border: solid 1px #ffffff4d;

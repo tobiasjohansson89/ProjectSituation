@@ -11,9 +11,7 @@ export default function Home() {
           <div className="form-container">
              <TaskForm></TaskForm>
           </div>
-          <div className="cards-container">
-            <Link to="DetailsPage"><Card></Card></Link>
-          </div>
+            <Card></Card>
         </main>
     </div>
     );

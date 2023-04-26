@@ -1,28 +1,11 @@
-import CardDetails from "./card-details";
-import { TaskForm } from "../components/task-form";
-import { BrowserRouter, Routes, Route, Navigate, NavLink} from 'react-router-dom'
+import Header from "../components/header";
 
 export default function DetailsPage() {
     return (
     <div>
         <Header />
         <main>
-            <TaskForm />
-            <BrowserRouter>
-            <div className="pages">
-                <h1>Ello</h1>
-                <Routes>
-                    <Route 
-                      path="/"
-                      element={<NavLink><Card></Card></NavLink>}
-                    />
-                    <Route 
-                      path="/"
-                      element={<CardDetails></CardDetails>}
-                    />
-                </Routes>
-            </div>
-            </BrowserRouter>
+            <h1>Ello!</h1>
         </main>
     </div>
     );
