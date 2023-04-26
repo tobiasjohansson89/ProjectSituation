@@ -21,7 +21,7 @@ useEffect(() => {
 }, []);
 
 task = data;
-console.log(task)
+//console.log(task)
 }
 
 export default function DetailsPage() {
@@ -34,11 +34,11 @@ export default function DetailsPage() {
         <main>
             <Link className="margin" to="/frontend/"><h2>`'-- Back</h2></Link>
             <div className="single-card">
-                <h1>{task.title}</h1>
-                <p>{task.description}</p>
-                <p>{task.category}</p>
-                <p>{task.deadline}</p>
-                <p>{task.author}</p>
+                <h1 className="underline">{task.title}</h1>
+                <p>Description: {task.description}</p>
+                <p>Category: {task.category}</p>
+                <p>Deadline: {task.deadline}</p>
+                <p>Author: {task.author}</p>
             </div> 
         </main>
     </div>

@@ -1,5 +1,10 @@
 import { NavLink } from "react-router-dom";
 
+function open() {
+    const form = document.querySelector("form")
+    form.style.display = "block"
+  }
+
 export default function Navbar() {
     return (
     <>
@@ -9,7 +14,7 @@ export default function Navbar() {
                 <NavLink to="/frontend/"><li>Home</li></NavLink>
                 <a href="http://10.0.0.68:5000/"><li>API-docs</li></a>
             </ul>
-            <button id="new-task">Add New Task</button> 
+            <button id="new-task" onClick={open}>Add New Task</button> 
         </nav>
     </>
     );

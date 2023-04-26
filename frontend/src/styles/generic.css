@@ -32,3 +32,6 @@
   .margin {
     margin: 1rem;
   }
+  .underline {
+    border-bottom: solid 1px white;
+  }

@@ -16,10 +16,6 @@ export function TaskForm() {
         deadline,
         author,
       }
-
-      
-       
-      
         const getData = async () => {
           const postOptions = {
             method: 'POST',
@@ -32,9 +28,15 @@ export function TaskForm() {
       }
       getData()
     };
+
+    function close() {
+      const form = document.querySelector("form")
+      form.style.display = "none"
+    }
   
     return (
       <form onSubmit={handleSubmit}>
+        <p onClick={close} className='close-btn'>Close X</p>
         <div className="form-field">
           <label htmlFor="title">Title:</label>
           <input
