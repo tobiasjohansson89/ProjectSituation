@@ -7,7 +7,7 @@ export default function Navbar() {
         <nav className="navbar">
             <ul>
                 <NavLink to="/frontend/"><li>Home</li></NavLink>
-                <NavLink to="/"><li>About</li></NavLink>
+                <a href="http://10.0.0.68:5000/"><li>API-docs</li></a>
             </ul>
             <button id="new-task">Add New Task</button> 
         </nav>
