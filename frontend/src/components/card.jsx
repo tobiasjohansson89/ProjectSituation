@@ -20,7 +20,7 @@ export default function Card() {
 return (<div className='cards-container'>
     {data.map((data) => { 
                 return (
-                <Link to="DetailsPage" key={data._id.$oid}>
+                <Link to={`DetailsPage?id=${data._id.$oid}`} key={data._id.$oid}>
                           <div className="card" >
                              <h2>{data.title}</h2>
                              <p>{data.description}</p>
