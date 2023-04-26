@@ -1,4 +1,5 @@
 import Header from "../components/header";
+import { TaskForm } from "../components/task-form";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 let task;
@@ -33,6 +34,9 @@ export default function DetailsPage() {
         }
         <main>
             <Link className="margin" to="/frontend/"><h2>`'-- Back</h2></Link>
+            <div className="form-container">
+              <TaskForm></TaskForm>
+            </div>
             <div className="single-card">
                 <h1 className="underline">{task.title}</h1>
                 <p>Description: {task.description}</p>
