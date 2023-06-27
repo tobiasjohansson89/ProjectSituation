@@ -5,8 +5,8 @@ import { createBrowserRouter, createRoutesFromElements, Route, Link, NavLink, Ro
 const router = createBrowserRouter(
    createRoutesFromElements(
       <Route>
-         <Route path='/frontend/' element={<Home/>}></Route>
-         <Route path='/frontend/DetailsPage' element={<DetailsPage></DetailsPage>}></Route>
+         <Route path='/' element={<Home/>}></Route>
+         <Route path='/DetailsPage' element={<DetailsPage></DetailsPage>}></Route>
       </Route>
    )
 );
