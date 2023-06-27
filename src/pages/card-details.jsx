@@ -41,12 +41,12 @@ export default function DetailsPage() {
         getSingleCard()
         }
         <main>
-            <Link className="margin" to="/"><h2>`'-- Back</h2></Link>
+            <Link className="margin" to="/"><h2>Back <i className="fa-solid fa-backward-step"></i></h2></Link>
             <div className="form-container">
               <TaskForm></TaskForm>
             </div>
             <div className="single-card">
-                <span className="material-symbols-outlined" >delete</span>
+                <span className="material-symbols-outlined" ><i className="fa-solid fa-trash"></i></span>
                 <h1 className="underline">{task.title}</h1>
                 <p>Description: {task.description}</p>
                 <p>Category: {task.category}</p>
