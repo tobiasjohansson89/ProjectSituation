@@ -11,7 +11,7 @@ export default function Navbar() {
         <h2 className="logo">ProjectSituation</h2>
         <nav className="navbar">
             <ul>
-                <NavLink to="/frontend/"><li>Home</li></NavLink>
+                <NavLink to="/"><li>Home</li></NavLink>
                 <a href="http://10.0.0.68:5000/"><li>API-docs</li></a>
             </ul>
             <button id="new-task" onClick={open}>Add New Task</button> 
