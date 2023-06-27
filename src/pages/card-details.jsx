@@ -18,8 +18,9 @@ export default function DetailsPage() {
         const response = await fetch(urlMongoDbdelete, {method: 'DELETE'})
         console.log(response)
     }
-    
+
     const deleteCard = () => {
+
         const deleteMessage = {title: "TASK DELETED"}
         setData(deleteMessage);
         deleteTask();
@@ -31,6 +32,7 @@ export default function DetailsPage() {
     }
 
     try {
+
         const queryString = document.location.search;
         const param = new URLSearchParams(queryString);
         const id = param.get("id");
@@ -39,11 +41,11 @@ export default function DetailsPage() {
             const urlMongoDb = `http://10.0.0.68:5000/task/${id}`;
             const response = await fetch(urlMongoDb);
             const json = await response.json();
-    
             return json;
         }
     
         const getCard = async () => {
+
             let myData = await doFetch()
             setData(myData);
         }
@@ -53,6 +55,7 @@ export default function DetailsPage() {
         }, []);
 
         if(data) {
+
             return (
                 <div>
                     <Header />
@@ -73,7 +76,9 @@ export default function DetailsPage() {
                 </div>
                 );
         }
+
         else {
+
             return(
                 <div>
                     <Header/>
@@ -84,14 +89,14 @@ export default function DetailsPage() {
         }
 
     } catch(error) {
-        console.log(error);
+
         return(
             <div>
                 <Header />
                 <main>
                     <h1>Error</h1>
+                    <p>{error}</p>
                 </main>
-            </div>
-        )
-    }
-    }
+            </div>)
+        }
+}
