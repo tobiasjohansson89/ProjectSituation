@@ -24,7 +24,15 @@ useEffect(() => {
 task = data;
 //console.log(task)
 }
+const deleteTask = () => {
+    return (
+        <div>
+            <p>Task{task.title} is deleted</p>
+            <Link className="margin" to="/"><h2>`'-- Back</h2></Link>
+        </div>
 
+    )
+}
 export default function DetailsPage() {
     return (
     <div>
@@ -33,7 +41,7 @@ export default function DetailsPage() {
         getSingleCard()
         }
         <main>
-            <Link className="margin" to="/frontend/"><h2>`'-- Back</h2></Link>
+            <Link className="margin" to="/"><h2>`'-- Back</h2></Link>
             <div className="form-container">
               <TaskForm></TaskForm>
             </div>
