@@ -24,15 +24,19 @@ useEffect(() => {
 task = data;
 //console.log(task)
 }
-const deleteTask = () => {
-    return (
-        <div>
-            <p>Task{task.title} is deleted</p>
-            <Link className="margin" to="/"><h2>`'-- Back</h2></Link>
-        </div>
+const deleteTask = async () => {
+    
+    const queryString = document.location.search;
+    const param = new URLSearchParams(queryString);
+    const id = param.get("id")
+    
 
-    )
+    const urlMongoDbdelete = `http://10.0.0.68:5000/delete/${id}`;
+    const response = await fetch(urlMongoDbdelete, {method: 'DELETE'})
+    console.log(response)
+
 }
+
 export default function DetailsPage() {
     return (
     <div>
@@ -46,7 +50,7 @@ export default function DetailsPage() {
               <TaskForm></TaskForm>
             </div>
             <div className="single-card">
-                <span className="material-symbols-outlined" ><i className="fa-solid fa-trash"></i></span>
+                <div className="material-symbols-outlined" onClick={deleteTask}><i className="fa-solid fa-trash"></i></div>
                 <h1 className="underline">{task.title}</h1>
                 <p>Description: {task.description}</p>
                 <p>Category: {task.category}</p>
