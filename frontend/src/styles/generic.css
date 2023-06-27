@@ -30,3 +30,8 @@
   .underline {
     border-bottom: solid 1px white;
   }
+  .flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }

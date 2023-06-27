@@ -38,6 +38,7 @@ export default function DetailsPage() {
               <TaskForm></TaskForm>
             </div>
             <div className="single-card">
+                <span className="material-symbols-outlined" >delete</span>
                 <h1 className="underline">{task.title}</h1>
                 <p>Description: {task.description}</p>
                 <p>Category: {task.category}</p>
