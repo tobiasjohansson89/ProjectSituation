@@ -25,6 +25,7 @@ export function TaskForm() {
             }
           }
           const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
+          console.log(taskObject)
       }
       getData();
 
