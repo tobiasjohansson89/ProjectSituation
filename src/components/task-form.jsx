@@ -26,7 +26,13 @@ export function TaskForm() {
           }
           const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
       }
-      getData()
+      getData();
+
+      setTitle("");
+      setDescription("");
+      setCategory("");
+      setDeadline("");
+      setAuthor("");
     };
 
     function close() {
