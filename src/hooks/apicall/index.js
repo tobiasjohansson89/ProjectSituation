@@ -31,3 +31,15 @@ export default function useFetchl(url) {
 
         return {data, loading, error};
 }
+
+export async function usePost(postData) {
+    const postOptions = {
+      method: 'POST',
+      body: JSON.stringify(postData),
+      headers: {
+          'Content-Type': 'application/json'    
+      }
+    }
+    await fetch("http://10.0.0.68:5000/add/", postOptions);
+    console.log(postData)
+}

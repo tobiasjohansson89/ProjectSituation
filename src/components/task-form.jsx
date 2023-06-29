@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { usePost } from '../hooks/apicall';
 
 export function TaskForm() {
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
@@ -8,26 +10,16 @@ export function TaskForm() {
     const [author, setAuthor] = useState('');
   
     const handleSubmit = (event) => {
+
       event.preventDefault();
-      const taskObject = {
+      const newTask = {
         title,
         description,
         category,
         deadline,
-        author,
+        author
       }
-        const getData = async () => {
-          const postOptions = {
-            method: 'POST',
-            body: JSON.stringify(taskObject),
-            headers: {
-                'Content-Type': 'application/json'    
-            }
-          }
-          const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
-          console.log(taskObject)
-      }
-      getData();
+      usePost(newTask);
 
       setTitle("");
       setDescription("");

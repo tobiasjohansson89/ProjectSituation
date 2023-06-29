@@ -7,7 +7,7 @@ export default function Card() {
     const urlMongoDb = "http://10.0.0.68:5000/tasks";
     const dummyApi = "https://dummyjson.com/products";
     
-    const { data, loading, error } = useFetch(urlMongoDb)
+    const { data, loading, error } = useFetch(urlMongoDb);
     const [tasks, setTasks] = useState([]);
     const [search, setSearch] = useState("");
 
