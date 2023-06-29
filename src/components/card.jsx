@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-let ids = [];
-let id;
+
 export default function Card() {
     
     const [data, setData] = useState([]);
@@ -14,19 +13,22 @@ export default function Card() {
     }
     
     useEffect(() => {
-        getData()
+        getData();
     }, []);
-
-return (<div className='cards-container'>
-    {data.map((data) => { 
+    
+    return (
+        <div className='cards-container'>
+            {data.map((data) => { 
                 return (
-                <Link to={`DetailsPage?id=${data._id.$oid}`} key={data._id.$oid}>
-                          <div className="card" >
-                             <h2>{data.title}</h2>
-                             <p>{data.deadline}</p>
-                          </div>
-                </Link>)
-                        })
-    }
-       </div>)
-    };
+                  <Link to={`detailspage?id=${data._id.$oid}`} key={data._id.$oid}>
+                        <div className="card" >
+                                <h2>{data.title}</h2>
+                                <p>{data.deadline}</p>
+                        </div>
+                  </Link>
+                )
+            })
+            }
+        </div>
+        )
+}

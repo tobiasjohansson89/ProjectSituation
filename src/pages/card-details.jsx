@@ -1,4 +1,3 @@
-import Header from "../components/header";
 import { TaskForm } from "../components/task-form";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
@@ -58,7 +57,6 @@ export default function DetailsPage() {
 
             return (
                 <div>
-                    <Header />
                     <main>
                         <Link className="margin" to="/"><h2>Back <i className="fa-solid fa-backward-step"></i></h2></Link>
                         <div className="form-container">
