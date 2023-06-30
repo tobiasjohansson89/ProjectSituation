@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { usePost } from '../hooks/apicall';
+// import { usePost } from '../hooks/apicall';
+import { useTasksContext } from '../hooks/usecontext';
 
 export function TaskForm() {
+  const { dispatch } = useTasksContext();
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -9,7 +11,7 @@ export function TaskForm() {
     const [deadline, setDeadline] = useState('');
     const [author, setAuthor] = useState('');
   
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
 
       event.preventDefault();
       const newTask = {
@@ -19,7 +21,20 @@ export function TaskForm() {
         deadline,
         author
       }
-      usePost(newTask);
+      const postOptions = {
+        method: 'POST',
+        body: JSON.stringify(newTask),
+        headers: {
+            'Content-Type': 'application/json'    
+        }
+      }
+      const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
+      console.log(newTask)
+      const json = await response.json()
+
+      if(response.ok) {
+        dispatch({type: "CREATE_TASK", payload: [newTask]})
+      }
 
       setTitle("");
       setDescription("");

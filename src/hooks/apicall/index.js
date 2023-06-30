@@ -5,6 +5,7 @@ export default function useFetchl(url) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] =useState(false);
+    const [responseOk, setResponse] = useState(false);
 
     async function getData() {
 
@@ -12,9 +13,12 @@ export default function useFetchl(url) {
             setLoading(true);
             setError(false);
 
-            const fetchData = await fetch(url);
-            const json = await fetchData.json();
+            const response = await fetch(url);
+            const json = await response.json();
             setData(json);
+            if (response.ok) {
+                setResponse(true)
+            }
 
         } catch (error) {
             console.log(error);
@@ -29,7 +33,7 @@ export default function useFetchl(url) {
             getData();
         }, [url]);
 
-        return {data, loading, error};
+        return {data, loading, error, responseOk};
 }
 
 export async function usePost(postData) {
