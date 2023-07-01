@@ -1,5 +1,5 @@
 import Home from './pages/home';
-import DetailsPage from './pages/card-details';
+import DetailsPage from './pages/details-page';
 import Layout from './layout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
