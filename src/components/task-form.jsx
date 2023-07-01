@@ -30,7 +30,7 @@ export function TaskForm() {
       }
       const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
       console.log(newTask)
-      const json = await response.json()
+      await response.json()
 
       if(response.ok) {
         dispatch({type: "CREATE_TASK", payload: [newTask]})
