@@ -6,15 +6,17 @@ function login() {
 
 export default function Navbar() {
     return (
-    <>
-        <h2 className="logo">ProjectSituation</h2>
-        <nav className="navbar">
-            <ul>
-                <NavLink to="/"><li>Home</li></NavLink>
-                <a href="http://10.0.0.68:5000/"><li>API-docs</li></a>
-            </ul>
-            <button onClick={login}>Login <i className="fa-solid fa-lock-open"></i></button> 
-        </nav>
-    </>
+        <>
+            <div className="flex-wrap">
+                <p>Project situation</p>
+                <nav className="navbar">
+                    <ul className="navlist">
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><a href="http://10.0.0.68:5000/">API-docs</a></li>
+                        <li><button onClick={login}>Login <i className="fa-solid fa-lock-open"></i></button></li>
+                    </ul> 
+                </nav>
+            </div>
+        </>
     );
     }
