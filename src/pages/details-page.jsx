@@ -2,20 +2,39 @@ import { TaskForm } from "../components/task-form";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useTasksContext } from "../hooks/usecontext";
 
 export default function DetailsPage() {
 
+    const { dispatch } = useTasksContext();
+
     const [data, setData] = useState({});
     const navigate = useNavigate();
-
+    
     const deleteTask = async () => {
-        
         const queryString = document.location.search;
         const param = new URLSearchParams(queryString);
         const id = param.get("id")
         const urlMongoDbdelete = `http://10.0.0.68:5000/delete/${id}`;
         const response = await fetch(urlMongoDbdelete, {method: 'DELETE'})
-        console.log(response)
+
+        const deleteTask = {
+            title: data.title,
+            description: data.description,
+            category: data.category,
+            deadline: data.deadline,
+            author: data.author,
+            _id: data.id,
+          }
+        const json = JSON.stringify(deleteTask)
+
+        if(response.ok) {
+            dispatch({type: "DELETE_TASK", payload: json})
+            console.log(response)
+        }
+        if(!response.ok) {
+            console.log(response)
+        }
     }
 
     const deleteCard = () => {
