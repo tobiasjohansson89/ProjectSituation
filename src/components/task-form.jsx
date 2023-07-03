@@ -44,8 +44,10 @@ export function TaskForm() {
     };
 
     function close() {
-      const form = document.querySelector("form")
-      form.style.display = "none"
+      const formContainer = document.querySelector(".form-container");
+      const form = document.querySelector("form");
+      form.style.display = "none";
+      formContainer.style.display = "none";
     }
   
     return (

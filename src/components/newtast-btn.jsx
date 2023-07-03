@@ -1,6 +1,7 @@
 function openTaskForm() {
-
+    const formContainer = document.querySelector(".form-container");
     const form = document.querySelector("form");
+    formContainer.style.display = "block";
     form.style.display = "block";
 }
 
