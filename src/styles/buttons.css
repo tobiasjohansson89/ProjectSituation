@@ -1,16 +1,18 @@
 button {
     border-radius: 8px;
-    border: 1px solid #ffffff;
+    /* border: 1px solid #ffffff; */
+    border: 1px solid #9ce0ff21;
     height: fit-content;
     padding: 10px 20px;
     margin: 1rem;
     font-size: 1em;
-    font-weight: 500;
     font-family: inherit;
-    background-color: #c0d8e2;
+    color: #ffffff;
+    /* background-color: #c0d8e2; */
+    background-color: #84c2df41;
     cursor: pointer;
     transition: border-color 0.25s;
   }
   button:hover {
-    border-color: #2c2929;
+    border-color: #2c2929cb;
   }

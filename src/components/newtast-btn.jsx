@@ -7,6 +7,6 @@ function openTaskForm() {
 export function NewTaskBtn() {
     
     return(
-        <button onClick={openTaskForm}>Add New Task</button>
+        <button onClick={openTaskForm}>New task <i className="fa-regular fa-pen-to-square"></i></button>
     )
 }

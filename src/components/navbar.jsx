@@ -13,7 +13,7 @@ export default function Navbar() {
                 <NavLink to="/"><li>Home</li></NavLink>
                 <a href="http://10.0.0.68:5000/"><li>API-docs</li></a>
             </ul>
-            <button onClick={login}>Login</button> 
+            <button onClick={login}>Login <i className="fa-solid fa-lock-open"></i></button> 
         </nav>
     </>
     );
