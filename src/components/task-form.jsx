@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useTasksContext } from '../hooks/usecontext';
 
 export function TaskForm() {
+
   const { dispatch } = useTasksContext();
 
     const [title, setTitle] = useState('');
@@ -29,11 +30,11 @@ export function TaskForm() {
         }
       }
       const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
-      console.log(newTask)
-      await response.json()
+      const json = await response.json();
+      // console.log(`THE RETURN OBJECT: ${json}`)
 
       if(response.ok) {
-        dispatch({type: "CREATE_TASK", payload: [newTask]})
+        dispatch({type: "CREATE_TASK", payload: json})
       }
 
       setTitle("");

@@ -5,11 +5,9 @@ import { useTasksContext } from "../hooks/usecontext";
 import useFetch from "../hooks/apicall";
 import { useEffect } from "react";
 import TasksList from "../components/tasks-list";
-// import { useState } from "react";
 
 export default function Home() {
 
-  // const [tasks, setTasks] = useState([]);
   const { tasks, dispatch } = useTasksContext();
   const {data, loading, error, responseOk} = useFetch("http://10.0.0.68:5000/tasks");
 
@@ -22,7 +20,7 @@ export default function Home() {
     }
     getTasks();
   }, [dispatch]);
-  
+  // console.log(tasks)
     return (
     <div>
         <main>
@@ -30,7 +28,6 @@ export default function Home() {
           <div className="form-container">
              <TaskForm />
           </div>
-          <Card/>
           {tasks && tasks.map(task => (
             <TasksList task={task} key={task._id.$oid} />
           ))}
