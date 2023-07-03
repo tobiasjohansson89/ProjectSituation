@@ -24,7 +24,7 @@ export default function DetailsPage() {
             category: data.category,
             deadline: data.deadline,
             author: data.author,
-            _id: data.id,
+            _id: {$oid: id},
           }
         const json = JSON.stringify(deleteTask)
 

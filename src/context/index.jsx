@@ -14,8 +14,11 @@ export const taskReduser = (state, action) => {
                 tasks: [action.payload, ...state.tasks]
             }
         case "DELETE_TASK": 
+        const deletedObject = JSON.parse(action.payload)
+        console.log(deletedObject)
+        console.log(deletedObject._id)
             return {
-                tasks: state.tasks.filter((task) => task._id !== action.payload._id)
+                tasks: state.tasks.filter((task) => task._id.$oid !== deletedObject._id.$oid)
             }
         default: 
             return state
