@@ -21,34 +21,17 @@ export default function Home() {
     getTasks();
   }, [dispatch]);
   // console.log(tasks)
-  if(tasks) {
-    return(
-      <div>
-        <main>
-            <NewTaskBtn />
-            <div className="form-container">
-              <TaskForm />
-            </div>
-            {tasks && tasks.map(task => (
-              <TasksList task={task} key={task._id.$oid} />
-            ))}
-        </main>
-      </div>
-    )
-  }
-  else {
     return (
-      <div>
-          <main>
-            <NewTaskBtn />
-            <div className="form-container">
-               <TaskForm />
-            </div>
-            { data.map(task => (
-              <TasksList task={task} key={task._id.$oid} />
-            ))}
-          </main>
-      </div>
-      );
-  }
+    <div>
+        <main>
+          <NewTaskBtn />
+          <div className="form-container">
+             <TaskForm />
+          </div>
+          {tasks && tasks.map(task => (
+            <TasksList task={task} key={task._id.$oid} />
+          ))}
+        </main>
+    </div>
+    );
 }
