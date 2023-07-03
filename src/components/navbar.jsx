@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 
-function open() {
-    const form = document.querySelector("form")
-    form.style.display = "block"
+function login() {
+    console.log("work in progress")
   }
 
 export default function Navbar() {
@@ -14,7 +13,7 @@ export default function Navbar() {
                 <NavLink to="/"><li>Home</li></NavLink>
                 <a href="http://10.0.0.68:5000/"><li>API-docs</li></a>
             </ul>
-            <button id="new-task" onClick={open}>Add New Task</button> 
+            <button onClick={login}>Login</button> 
         </nav>
     </>
     );
