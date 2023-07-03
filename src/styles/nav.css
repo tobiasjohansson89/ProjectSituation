@@ -21,3 +21,9 @@ nav {
     text-decoration: underline;
     cursor: pointer;
   }
+
+  .tasks-list {
+    list-style-type: none;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.685);
+  }
