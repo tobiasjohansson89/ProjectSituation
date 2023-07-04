@@ -12,6 +12,7 @@ export default function Home() {
   const {data, loading, error, responseOk} = useFetch("http://10.0.0.68:5000/tasks");
 
    //Makes sure tasks are done loading before render?
+   //https://stackoverflow.com/questions/69983254/react-component-content-disappears-after-page-refresh 
   const getTasks = async () => {
     return await new Promise((resolve) => resolve(data))
   }
