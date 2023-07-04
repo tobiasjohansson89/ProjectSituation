@@ -7,7 +7,7 @@ export const taskReduser = (state, action) => {
     switch (action.type) {
         case "SET_TASKS":
             return {
-                tasks: action.payload,
+                tasks: action.payload
             }
         case "CREATE_TASK":
             return {
@@ -15,8 +15,6 @@ export const taskReduser = (state, action) => {
             }
         case "DELETE_TASK": 
         const deletedObject = JSON.parse(action.payload)
-        console.log(deletedObject)
-        console.log(deletedObject._id)
             return {
                 tasks: state.tasks.filter((task) => task._id.$oid !== deletedObject._id.$oid)
             }

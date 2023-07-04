@@ -7,31 +7,50 @@ import { useEffect } from "react";
 import TasksList from "../components/tasks-list";
 
 export default function Home() {
-
+  
   const { tasks, dispatch } = useTasksContext();
   const {data, loading, error, responseOk} = useFetch("http://10.0.0.68:5000/tasks");
 
+   //Makes sure tasks are done loading before render?
+  const getTasks = async () => {
+    return await new Promise((resolve) => resolve(data))
+  }
   useEffect(() => {
-    const getTasks = () => {
-      
-      if(responseOk === true) {
-        dispatch({type: "SET_TASKS", payload: data})
-      }
-    }
-    getTasks();
+    getTasks().then(dispatch({type: "SET_TASKS", payload: data}))
+  }, [data])
+  //Re-render for every dispatch?
+  useEffect(() => {
+    dispatch({type: "SET_TASKS", payload: data})
   }, [dispatch]);
   // console.log(tasks)
-    return (
-    <div>
+  try {
+
+    if(loading) {
+      return(
+        <p>loading</p>
+      )
+    }
+    if(error) {
+      return(
+        <p>error</p>
+      )
+    }
+    if(data) {
+      return (
         <main>
           <NewTaskBtn />
           <div className="form-container">
-             <TaskForm />
+            <TaskForm />
           </div>
-          {tasks && tasks.map(task => (
-            <TasksList task={task} key={task._id.$oid} />
-          ))}
-        </main>
-    </div>
-    );
+          <div>
+            {tasks && tasks.map(task => (
+              <TasksList task={task} key={task._id.$oid} />
+            ))}
+          </div>
+      </main>
+      );
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
