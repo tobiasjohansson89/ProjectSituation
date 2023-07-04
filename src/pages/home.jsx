@@ -35,7 +35,7 @@ export default function Home() {
         <p>error</p>
       )
     }
-    if(data) {
+    if(responseOk) {
       return (
         <main>
           <NewTaskBtn />
