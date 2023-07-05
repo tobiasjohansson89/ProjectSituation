@@ -1,9 +1,13 @@
 header {
     background-color: #2c2929;
+    background-color: #2a3636;
     margin: 0;
-    padding: 1rem 3vw;
+    padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     box-shadow: 0 1px 20px #00000052;
   }
-
+.navlist {
+  display: flex;
+  align-items: center;
+}

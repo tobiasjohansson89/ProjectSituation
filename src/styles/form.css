@@ -1,7 +1,9 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    background-color: #c0d8e2a1;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000073;
 }
 form {
     border: solid 1px #ffffff4d;
@@ -10,6 +12,8 @@ form {
     border-radius: 5px;
     padding: 2vw;
     width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
     display: none;
 }
 .form-field {

@@ -35,3 +35,8 @@
     flex-wrap: wrap;
     align-items: center;
   }
+  .tasks-list {
+    list-style-type: none;
+    width: fit-content;
+    padding: 0;
+  }

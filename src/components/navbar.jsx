@@ -1,21 +1,22 @@
 import { NavLink } from "react-router-dom";
 
-function open() {
-    const form = document.querySelector("form")
-    form.style.display = "block"
+function login() {
+    console.log("work in progress")
   }
 
 export default function Navbar() {
     return (
-    <>
-        <h2 className="logo">ProjectSituation</h2>
-        <nav className="navbar">
-            <ul>
-                <NavLink to="/frontend/"><li>Home</li></NavLink>
-                <a href="http://10.0.0.68:5000/"><li>API-docs</li></a>
-            </ul>
-            <button id="new-task" onClick={open}>Add New Task</button> 
-        </nav>
-    </>
+        <>
+            <div className="flex-wrap">
+                <p>Project situation</p>
+                <nav className="navbar">
+                    <ul className="navlist">
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><a href="http://10.0.0.68:5000/">API-docs</a></li>
+                        <li><button onClick={login}>Login <i className="fa-solid fa-lock-open"></i></button></li>
+                    </ul> 
+                </nav>
+            </div>
+        </>
     );
     }

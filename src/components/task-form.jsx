@@ -1,37 +1,54 @@
 import React, { useState, useEffect } from 'react';
+// import { usePost } from '../hooks/apicall';
+import { useTasksContext } from '../hooks/usecontext';
 
 export function TaskForm() {
+
+  const { dispatch } = useTasksContext();
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [deadline, setDeadline] = useState('');
     const [author, setAuthor] = useState('');
   
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
+
       event.preventDefault();
-      const taskObject = {
+      const newTask = {
         title,
         description,
         category,
         deadline,
-        author,
+        author
       }
-        const getData = async () => {
-          const postOptions = {
-            method: 'POST',
-            body: JSON.stringify(taskObject),
-            headers: {
-                'Content-Type': 'application/json'    
-            }
-          }
-          const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
+      const postOptions = {
+        method: 'POST',
+        body: JSON.stringify(newTask),
+        headers: {
+            'Content-Type': 'application/json'    
+        }
       }
-      getData()
+      const response = await fetch("http://10.0.0.68:5000/add/", postOptions);
+      const json = await response.json();
+      // console.log(`THE RETURN OBJECT: ${json}`)
+
+      if(response.ok) {
+        dispatch({type: "CREATE_TASK", payload: json})
+      }
+
+      setTitle("");
+      setDescription("");
+      setCategory("");
+      setDeadline("");
+      setAuthor("");
     };
 
     function close() {
-      const form = document.querySelector("form")
-      form.style.display = "none"
+      const formContainer = document.querySelector(".form-container");
+      const form = document.querySelector("form");
+      form.style.display = "none";
+      formContainer.style.display = "none";
     }
   
     return (
