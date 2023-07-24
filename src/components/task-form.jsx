@@ -46,6 +46,8 @@ export function TaskForm() {
       setCategory("");
       setDeadline("");
       setAuthor("");
+      setUrls("");
+      setPrice("");
     };
 
     function close() {
@@ -104,6 +106,26 @@ export function TaskForm() {
             id="author"
             value={author}
             onChange={(event) => setAuthor(event.target.value)}
+          />
+        </div>
+
+        <div className="form-field">
+          <label htmlFor="urls">Urls:</label>
+          <input
+            type="text"
+            id="urls"
+            value={urls}
+            onChange={(event) => setUrls(event.target.value)}
+          />
+        </div>
+
+        <div className="form-field">
+          <label htmlFor="price">Price:</label>
+          <input
+            type="text"
+            id="price"
+            value={price}
+            onChange={(event) => setPrice(event.target.value)}
           />
         </div>
   
