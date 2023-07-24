@@ -52,7 +52,7 @@ export function TaskForm() {
     }
   
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id='task-form'>
         <p onClick={close} className='close-btn'>Close X</p>
         <div className="form-field">
           <label htmlFor="title">Title:</label>

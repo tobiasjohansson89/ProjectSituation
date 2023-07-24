@@ -1,6 +1,7 @@
 import Card from "../components/card";
 import { NewTaskBtn } from "../components/newtast-btn";
 import { TaskForm } from "../components/task-form";
+import LoginForm from "../components/login-form";
 import { useTasksContext } from "../hooks/usecontext";
 import useFetch from "../hooks/apicall";
 import { useEffect } from "react";
@@ -42,6 +43,7 @@ export default function Home() {
           <NewTaskBtn />
           <div className="form-container">
             <TaskForm />
+            <LoginForm />
           </div>
           <div>
             {tasks && tasks.map(task => (

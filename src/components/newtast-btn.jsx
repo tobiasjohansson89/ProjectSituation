@@ -1,8 +1,8 @@
 function openTaskForm() {
     const formContainer = document.querySelector(".form-container");
-    const form = document.querySelector("form");
+    const taskForm = document.getElementById("task-form");
     formContainer.style.display = "block";
-    form.style.display = "block";
+    taskForm.style.display = "block";
 }
 
 export function NewTaskBtn() {
