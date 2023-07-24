@@ -73,13 +73,7 @@ export default function DetailsPage() {
         }, []);
 
         if(data) {
-            let price;
-            if(data.price) {
-                price = data.price;
-            }
-            if(!data.price) {
-                price = "0";
-            }
+
             return (
                 <div>
                     <main>
@@ -94,7 +88,7 @@ export default function DetailsPage() {
                             <p>{data.descriptions}</p>
                             <div className="flex-wrap">
                                 <h2>Estimated price </h2>
-                                <p>: ${price}</p>
+                                <p>: ${data.price}</p>
                             </div>
                             <div className="flex-wrap">
                                 <h2>Category </h2>

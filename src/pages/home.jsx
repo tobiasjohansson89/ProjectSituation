@@ -40,11 +40,11 @@ export default function Home() {
     if(responseOk) {
       return (
         <main>
-          <NewTaskBtn />
           <div className="form-container">
             <TaskForm />
             <LoginForm />
           </div>
+          <NewTaskBtn />
           <div>
             {tasks && tasks.map(task => (
               <TasksList task={task} key={task._id.$oid} />
