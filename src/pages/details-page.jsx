@@ -88,6 +88,8 @@ export default function DetailsPage() {
                             <p>{data.category}</p>
                             <p>{data.deadline}</p>
                             <p>{data.author}</p>
+                            <p>${data.price}</p>
+                            <a href={data.urls}>url: {data.urls}</a>
                         </div> 
                     </main>
                 </div>
