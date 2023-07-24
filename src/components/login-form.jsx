@@ -8,15 +8,25 @@ export default function LoginForm() {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
+  async function login() {
+    const user = {
+      username,
+      email
+    }
+    const postOptions = {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+          'Content-Type': 'application/json'    
+      }
+    }
+    // const response = await fetch("http://10.0.0.68:5000/login/", postOptions);
+    // const json = await response.json();
+    console.log(user)
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    //For register new user
-    // if (password !== repeatPassword) {
-    //   setPasswordError('Passwords do not match');
-    //   return;
-    // }
-    // + Registration logic
+    login();
 
     setEmail('');
     setUsername('');
