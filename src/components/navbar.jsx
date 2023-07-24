@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 function login() {
-    console.log("work in progress")
+    const formContainer = document.querySelector(".form-container");
+    const loginForm = document.getElementById("login-form");
+    formContainer.style.display = "block";
+    loginForm.style.display = "block";
   }
 
 export default function Navbar() {

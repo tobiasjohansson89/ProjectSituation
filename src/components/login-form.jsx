@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function RegisterForm() {
+export default function LoginForm() {
 
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -11,12 +11,12 @@ export default function RegisterForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (password !== repeatPassword) {
-      setPasswordError('Passwords do not match');
-      return;
-    }
-
-    // Your registration logic here
+    //For register new user
+    // if (password !== repeatPassword) {
+    //   setPasswordError('Passwords do not match');
+    //   return;
+    // }
+    // + Registration logic
 
     setEmail('');
     setUsername('');
@@ -24,10 +24,17 @@ export default function RegisterForm() {
     setRepeatPassword('');
     setPasswordError('');
   };
+  function close() {
+    const formContainer = document.querySelector(".form-container");
+    const form = document.getElementById("login-form");
+    form.style.display = "none";
+    formContainer.style.display = "none";
+  }
 
   return (
-    <form onSubmit={handleSubmit} id='register-form'>
-      <label>
+    <form onSubmit={handleSubmit} id='login-form'>
+      <p onClick={close} className='close-btn'>Close X</p>
+      <label className="form-field">
         Email:
         <input
           type="email"
@@ -37,7 +44,7 @@ export default function RegisterForm() {
         />
       </label>
       <br />
-      <label>
+      <label className="form-field">
         Username:
         <input
           type="text"
@@ -47,7 +54,7 @@ export default function RegisterForm() {
         />
       </label>
       <br />
-      <label>
+      <label className="form-field">
         Password:
         <input
           type="password"
@@ -57,7 +64,7 @@ export default function RegisterForm() {
         />
       </label>
       <br />
-      <label>
+      {/* <label>
         Repeat Password:
         <input
           type="password"
@@ -65,10 +72,12 @@ export default function RegisterForm() {
           onChange={(e) => setRepeatPassword(e.target.value)}
           required
         />
-      </label>
+      </label> */}
       {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
       <br />
-      <button type="submit">Register</button>
+      <div className='form-field'>
+        <button type="submit">Login</button>
+      </div>
     </form>
   );
 };
