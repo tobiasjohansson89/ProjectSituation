@@ -5,13 +5,14 @@ export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
+  //const [repeatPassword, setRepeatPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
   async function login() {
     const user = {
       username,
-      email
+      email,
+      password
     }
     const postOptions = {
       method: 'POST',
@@ -31,7 +32,7 @@ export default function LoginForm() {
     setEmail('');
     setUsername('');
     setPassword('');
-    setRepeatPassword('');
+    //setRepeatPassword('');
     setPasswordError('');
   };
   function close() {
