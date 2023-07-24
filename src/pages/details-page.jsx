@@ -73,7 +73,13 @@ export default function DetailsPage() {
         }, []);
 
         if(data) {
-
+            let price;
+            if(data.price) {
+                price = data.price;
+            }
+            if(!data.price) {
+                price = "0";
+            }
             return (
                 <div>
                     <main>
@@ -84,12 +90,26 @@ export default function DetailsPage() {
                         <div className="single-card">
                             <div className="material-symbols-outlined" onClick={deleteCard}><i className="fa-solid fa-trash"></i></div>
                             <h1 className="underline">{data.title}</h1>
-                            <p>{data.description}</p>
-                            <p>{data.category}</p>
-                            <p>{data.deadline}</p>
-                            <p>{data.author}</p>
-                            <p>${data.price}</p>
-                            <a href={data.urls}>url: {data.urls}</a>
+                            <h2>Description</h2>
+                            <p>{data.descriptions}</p>
+                            <div className="flex-wrap">
+                                <h2>Estimated price </h2>
+                                <p>: ${price}</p>
+                            </div>
+                            <div className="flex-wrap">
+                                <h2>Category </h2>
+                                <p>: {data.category}</p>
+                            </div>
+                            <div className="flex-wrap">
+                                <h2>Deadline </h2>
+                                <p>: {data.deadline}</p>
+                            </div>
+                            <div className="flex-wrap">
+                                <h2>Author </h2>
+                                <p>: {data.author}</p>
+                            </div>
+                            <h2>Urls</h2>
+                            <a href={data.urls}>{data.urls}</a>
                         </div> 
                     </main>
                 </div>
