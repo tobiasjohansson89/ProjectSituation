@@ -11,7 +11,6 @@ export default function LoginForm() {
   async function login() {
     const user = {
       username,
-      email,
       password
     }
     const postOptions = {
@@ -21,9 +20,9 @@ export default function LoginForm() {
           'Content-Type': 'application/json'    
       }
     }
-    // const response = await fetch("http://10.0.0.68:5000/login/", postOptions);
-    // const json = await response.json();
-    console.log(user)
+     const response = await fetch("http://10.0.0.68:5000/login", postOptions);
+     const json = await response.json();
+    console.log(json)
   }
   const handleSubmit = (e) => {
     e.preventDefault();
