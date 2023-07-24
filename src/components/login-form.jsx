@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function LoginForm() {
 
-  const [email, setEmail] = useState('');
+  //const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   //const [repeatPassword, setRepeatPassword] = useState('');
@@ -28,7 +28,7 @@ export default function LoginForm() {
     e.preventDefault();
     login();
 
-    setEmail('');
+    //setEmail('');
     setUsername('');
     setPassword('');
     //setRepeatPassword('');
@@ -44,7 +44,7 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit} id='login-form'>
       <p onClick={close} className='close-btn'>Close X</p>
-      <label className="form-field">
+      {/* <label className="form-field">
         Email:
         <input
           type="email"
@@ -52,7 +52,7 @@ export default function LoginForm() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
+      </label> */}
       <br />
       <label className="form-field">
         Username:
