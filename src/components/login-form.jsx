@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const RegisterForm = () => {
+export default function RegisterForm() {
+
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +26,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id='register-form'>
       <label>
         Email:
         <input
@@ -71,5 +72,3 @@ const RegisterForm = () => {
     </form>
   );
 };
-
-export default RegisterForm;
