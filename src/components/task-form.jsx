@@ -7,7 +7,9 @@ export function TaskForm() {
   const { dispatch } = useTasksContext();
 
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    const [descriptions, setDescription] = useState('');
+    const [urls, setUrls] = useState('');
+    const [price, setPrice] = useState('');
     const [category, setCategory] = useState('');
     const [deadline, setDeadline] = useState('');
     const [author, setAuthor] = useState('');
@@ -17,10 +19,12 @@ export function TaskForm() {
       event.preventDefault();
       const newTask = {
         title,
-        description,
+        descriptions,
         category,
         deadline,
-        author
+        author,
+        urls,
+        price
       }
       const postOptions = {
         method: 'POST',
@@ -68,7 +72,7 @@ export function TaskForm() {
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
-            value={description}
+            value={descriptions}
             onChange={(event) => setDescription(event.target.value)}
           />
         </div>
