@@ -13,6 +13,7 @@ export function TaskForm() {
     const [category, setCategory] = useState('');
     const [deadline, setDeadline] = useState('');
     const [author, setAuthor] = useState('');
+    const [status, setStatus] = useState('');
   
     const handleSubmit = async (event) => {
 
@@ -23,6 +24,7 @@ export function TaskForm() {
         category,
         deadline,
         author,
+        status,
         urls,
         price
       }
@@ -46,6 +48,7 @@ export function TaskForm() {
       setCategory("");
       setDeadline("");
       setAuthor("");
+      setStatus("");
       setUrls("");
       setPrice("");
     };
@@ -106,6 +109,15 @@ export function TaskForm() {
             id="author"
             value={author}
             onChange={(event) => setAuthor(event.target.value)}
+          />
+          </div>
+          <div className="form-field">
+          <label htmlFor="status">Status:</label>
+          <input
+            type="text"
+            id="status"
+            value={status}
+            onChange={(event) => setStatus(event.target.value)}
           />
         </div>
 

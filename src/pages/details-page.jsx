@@ -24,6 +24,7 @@ export default function DetailsPage() {
             category: data.category,
             deadline: data.deadline,
             author: data.author,
+            status: data.status,
             _id: {$oid: id},
           }
         const json = JSON.stringify(deleteTask)
@@ -101,6 +102,10 @@ export default function DetailsPage() {
                             <div className="flex-wrap">
                                 <h2>Author </h2>
                                 <p>: {data.author}</p>
+                            </div>
+                            <div className="flex-wrap">
+                                <h2>Status </h2>
+                                <p>: {data.status}</p>
                             </div>
                             <h2>Urls</h2>
                             <a href={data.urls}>{data.urls}</a>
