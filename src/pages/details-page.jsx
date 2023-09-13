@@ -49,7 +49,10 @@ export default function DetailsPage() {
             }, 1000
         );
     }
+    const editCard = () => {
+        const editMessage = {}
 
+    }
     try {
 
         const queryString = document.location.search;
@@ -84,6 +87,7 @@ export default function DetailsPage() {
                         </div>
                         <div className="single-card">
                             <div className="material-symbols-outlined" onClick={deleteCard}><i className="fa-solid fa-trash"></i></div>
+                            <div className="material-symbols-outlined" onClick={deleteCard}><i className="fa-solid fa-pen-to-square"></i></div>
                             <h1 className="underline">{data.title}</h1>
                             <h2>Description</h2>
                             <p>{data.descriptions}</p>
